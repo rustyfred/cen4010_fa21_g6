@@ -55,7 +55,7 @@ if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
             <a class="nav-link" href="home.php">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo URL . $user->username; ?>">Profile<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?php echo URL . $user->$username; ?>">Profile<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <div class="navbar-item" style="margin: auto 4px">

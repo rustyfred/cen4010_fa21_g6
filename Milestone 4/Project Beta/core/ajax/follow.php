@@ -6,20 +6,20 @@ if(isset($_POST['follow']) && !empty($_POST['follow'])){
 
 	date_default_timezone_set("America/New_York");
 
-    if($following_id != $user_id) {
-        $data_notify = [
-        'notify_for' => $following_id ,
-        'notify_from' => $user_id ,
-        'target' => 0, 
-        'type' => 'follow' ,
-        'time' => date("Y-m-d H:i:s") ,
-        'count' => '0' , 
-        'status' => '0'
-        ];
+    // if($following_id != $user_id) {
+    //     $data_notify = [
+    //     'notify_for' => $following_id ,
+    //     'notify_from' => $user_id ,
+    //     'target' => 0, 
+    //     'type' => 'follow' ,
+    //     'time' => date("Y-m-d H:i:s") ,
+    //     'count' => '0' , 
+    //     'status' => '0'
+    //     ];
 
-        Post::create('notifications' , $data_notify);
+    //     Post::create('notifications' , $data_notify);
         
-    } 
+    // } 
     // end
     $data = [
         'follower_id' => $user_id , 

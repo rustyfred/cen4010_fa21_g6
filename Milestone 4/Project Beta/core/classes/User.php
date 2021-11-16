@@ -75,17 +75,17 @@ class User extends Connect {
               'following_id' => 2 , 
               'time' => date("Y-m-d H:i:s") 
           ];
-          User::create('follow' , $data);
-          $data_notify = [
-            'notify_for' => 2,
-            'notify_from' => $user_id ,
-            'target' => 0, 
-            'type' => 'follow' ,
-            'time' => date("Y-m-d H:i:s") ,
-            'count' => '0' , 
-            'status' => '0'
-            ];
-            Post::create('notifications' , $data_notify);
+          // User::create('follow' , $data);
+          // $data_notify = [
+          //   'notify_for' => 2,
+          //   'notify_from' => $user_id ,
+          //   'target' => 0, 
+          //   'type' => 'follow' ,
+          //   'time' => date("Y-m-d H:i:s") ,
+          //   'count' => '0' , 
+          //   'status' => '0'
+          //   ];
+          //   Post::create('notifications' , $data_notify);
 
           $_SESSION['welcome'] = 'welcome';
           header('location: ../home.php')  ;
@@ -190,30 +190,30 @@ class User extends Connect {
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
           } 
-          public static function CountNotification($user_id){
-            $stmt = self::connect()->prepare("SELECT COUNT(notify_for) as count FROM `notifications`
-            WHERE notify_for = :user_id AND count = 0");
-             $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
-            $stmt->execute();
-            $u = $stmt->fetch(PDO::FETCH_OBJ);
-            return $u->count;
-          } 
-          public static function notification($user_id){
-            $stmt = self::connect()->prepare("SELECT * FROM `notifications`
-            WHERE notify_for = :user_id ORDER BY time DESC");
-            $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-          } 
-          public static function updateNotifications($user_id){
-            $stmt = self::connect()->prepare("UPDATE `notifications` SET count = 1
-             WHERE notify_for = :user_id AND count = 0" );
-            $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
-             $s =$stmt->execute();
-             if($s)
-              return true;
-            else return false;  
-          } 
+          // public static function CountNotification($user_id){
+          //   $stmt = self::connect()->prepare("SELECT COUNT(notify_for) as count FROM `notifications`
+          //   WHERE notify_for = :user_id AND count = 0");
+          //    $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
+          //   $stmt->execute();
+          //   $u = $stmt->fetch(PDO::FETCH_OBJ);
+          //   return $u->count;
+          // } 
+          // public static function notification($user_id){
+          //   $stmt = self::connect()->prepare("SELECT * FROM `notifications`
+          //   WHERE notify_for = :user_id ORDER BY time DESC");
+          //   $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
+          //   $stmt->execute();
+          //   return $stmt->fetchAll(PDO::FETCH_OBJ);
+          // } 
+          // public static function updateNotifications($user_id){
+          //   $stmt = self::connect()->prepare("UPDATE `notifications` SET count = 1
+          //    WHERE notify_for = :user_id AND count = 0" );
+          //   $stmt->bindParam(":user_id" , $user_id , PDO::PARAM_STR);
+          //    $s =$stmt->execute();
+          //    if($s)
+          //     return true;
+          //   else return false;  
+          // } 
 
 
 

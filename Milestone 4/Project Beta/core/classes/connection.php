@@ -5,9 +5,12 @@
 class Connect {
     protected static $servername = "localhost";
     // protected static $db_name="relkhatib2019";
-    protected static $db_name="cen4010_fa21_g06";
-    protected static $username = "root";
-    protected static $password = "";
+    // protected static $db_name="cen4010_fa21_g06";
+    protected static $db_name="id17949852_cen4010_fa21_g06";
+    // protected static $username = "root";
+    protected static $username = "id17949852_teamg6";
+    // protected static $password = "";
+    protected static $password = "<1VjGbh@l(o1cfa|";
     protected static $pdo;
     public function __construct() { }
 
