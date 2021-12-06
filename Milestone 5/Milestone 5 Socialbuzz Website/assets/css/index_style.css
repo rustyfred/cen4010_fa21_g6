@@ -179,7 +179,7 @@ footer a{
 	color: #a75858;
 }
 
-@media (max-width:800px){
+@media screen and (max-width:1200px){
 
 	.buzz-main{
 		display: grid;
@@ -194,9 +194,16 @@ footer a{
 		margin-top: 50px;
 	}
 	.buzz-login{
-		width: auto;
-		height: 60vh;
+		right: 30px;
+		margin-right: auto;
+		float:none !important;
+		text-align: center !important;
 	}
+
+	.buzz-signup{
+		margin-left: 110px;
+	}
+	
 
 	footer ul{
 		display: none;

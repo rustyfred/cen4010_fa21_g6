@@ -28,6 +28,10 @@
   }
  
   /* SIDEBAR */
+
+  #mine {
+	min-height:1200px;
+  }
   #mine .wrapper-left {
 	display: flex !important;
 	position: relative !important;
@@ -764,7 +768,7 @@
 	border: 1px solid transparent;
 	background-color: #eeeeee;
 	transition: .3s;
-	
+	/* margin-bottom:500px!important; */
   }
   #loadMore:hover {
 	color: #c9c9c9;
